@@ -1,0 +1,46 @@
+#kidsCourseDetail {
+    --scratchTheme: #FFAB1A;
+
+
+    header {
+        background-color: var(--scratchTheme);
+        color: white;
+        font-size: 2.6em;
+        padding: 5.5em;
+        padding-top: 4em;
+        position: relative;
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 1.1em;
+            position: absolute;
+            left: 0 ;
+            right: 0;
+
+            span {
+                color: #ffffffa1;
+            }
+
+            img {
+                width: 16em;
+                margin-top: -1em;
+            }
+
+        }
+
+        &::before {
+            content: "";
+            width: 100%;
+            background-color: #FFAB1A;
+            height: 7.3em;
+            position: absolute;
+            top: 100%;
+            clip-path: ellipse(60% 100% at 50% -40%);
+            right: 0;
+        }
+
+    }
+}
