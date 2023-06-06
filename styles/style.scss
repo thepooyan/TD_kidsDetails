@@ -1,5 +1,6 @@
 #kidsCourseDetail {
     --scratchTheme: #FFAB1A;
+    --greyText: #939393;
     background-color: #FAF9FF;
 
     a {
@@ -16,7 +17,9 @@
 
         &.scratched {
 
-            &_1, &_2, &_3 {
+            &_1,
+            &_2,
+            &_3 {
                 position: relative;
 
                 &::before {
@@ -122,7 +125,6 @@
     }
 
     section.termCard {
-        --grey: #939393;
         font-size: 1.3em;
         background: white;
         display: flex;
@@ -140,11 +142,73 @@
 
         .left {
             p {
-                color: var(--grey);
+                color: var(--greyText);
             }
 
             .info div span {
-                color: var(--grey);
+                color: var(--greyText);
+            }
+        }
+    }
+
+    section.smapleProject {
+
+        h2,
+        h3 {
+            border-bottom: 2px solid transparent;
+            border-image: linear-gradient(to left, var(--scratchTheme) 0% var(--border-size), transparent var(--border-size) 100%);
+            border-image-slice: 1;
+            --border-size: 38px;
+            margin-bottom: 2em;
+
+            span {
+                color: var(--scratchTheme);
+            }
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+
+            >div {
+                flex: 0 0 25%;
+                padding: 0 1em;
+                margin-bottom: 3em;
+
+                img {
+                    width: 100%;
+                }
+
+                .title {
+                    color: var(--scratchTheme);
+                    font-weight: bold;
+                    font-size: 1.5em;
+                    margin: 0.5em 0;
+                }
+
+                p {
+                    color: var(--greyText);
+                    font-size: 1.1em;
+                    line-height: 2em;
+                    max-height: 4em;
+                    overflow: hidden;
+                }
+
+                .user {
+                    margin-top: 1em;
+                    img {
+                        width: 4em;
+                        border-radius: 50%;
+                        float: right;
+                        margin-left: 1em;
+                    }
+
+                    span {
+                        display: block;
+                        line-height: 0.7em;
+                        color: var(--grey);
+                    }
+                }
             }
         }
     }
