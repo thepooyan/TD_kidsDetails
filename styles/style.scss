@@ -9,6 +9,7 @@
         padding: 5.5em;
         padding-top: 4em;
         position: relative;
+        margin-bottom: 9em;
 
         section {
             display: flex;
@@ -17,7 +18,7 @@
             flex-direction: column;
             gap: 1.1em;
             position: absolute;
-            left: 0 ;
+            left: 0;
             right: 0;
 
             span {
@@ -42,5 +43,30 @@
             right: 0;
         }
 
+    }
+
+    main.courseDetails {
+        padding: 0 5em;
+
+        @import '../content/source/innerContent';
+
+        .video {
+            margin: 6em 0; 
+
+            h3, h2, h4 {
+                text-align: center;
+                font-size: 1.4rem;
+            }
+
+            video {
+                margin: auto;
+                display: block;
+                background: #D9D9D9;
+                border-radius: 0.7em;
+                width: 100%;
+                max-width: 70em;
+
+            }
+        }
     }
 }
