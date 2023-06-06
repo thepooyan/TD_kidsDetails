@@ -13,6 +13,38 @@
         color: #615031;
         border-radius: 0.6em;
         padding: 0.5em 1.6em;
+
+        &.scratched {
+
+            &_1, &_2, &_3 {
+                position: relative;
+
+                &::before {
+                    content: "";
+                    width: var(--wid);
+                    height: var(--wid);
+                    display: block;
+                    position: absolute;
+                    bottom: 100%;
+                    background: url("/Content/images/img/scratch items/scratch_selfie.png");
+                    --wid: 8em;
+                    bottom: calc(100% - 1.2em);
+                    left: calc(100% - 3.9em);
+                    background-size: contain;
+                }
+            }
+
+            &_2::before {
+                background: none
+            }
+
+            &_3::before {
+                background-image: url("/Content/images/img/scratch items/scratch_happy.png");
+                left: 59%;
+                bottom: 29%;
+            }
+
+        }
     }
 
 
