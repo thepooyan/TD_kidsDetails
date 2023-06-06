@@ -2,6 +2,19 @@
     --scratchTheme: #FFAB1A;
     background-color: #FAF9FF;
 
+    a {
+        color: var(--scratchTheme);
+        font-weight: bold;
+    }
+
+    a.button {
+        background-color: var(--scratchTheme);
+        display: inline-block;
+        color: #615031;
+        border-radius: 0.6em;
+        padding: 0.5em 1.6em;
+    }
+
 
     header {
         background-color: var(--scratchTheme);
@@ -46,7 +59,7 @@
 
     }
 
-    > *:not(header) {
+    >*:not(header) {
         margin: 0 5em;
         margin-bottom: 5em;
     }
@@ -77,17 +90,30 @@
     }
 
     section.termCard {
+        --grey: #939393;
+        font-size: 1.3em;
         background: white;
         display: flex;
+        gap: 1.5em;
         border-radius: 1.2em;
         box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.09);
-        padding: 3em;
+        padding: 2.3em;
 
         img {
-            --wid: 27em;
+            --wid: 20.9em;
             width: var(--wid);
             height: var(--wid);
             object-fit: contain;
+        }
+
+        .left {
+            p {
+                color: var(--grey);
+            }
+
+            .info div span {
+                color: var(--grey);
+            }
         }
     }
 }
