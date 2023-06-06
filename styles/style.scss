@@ -1,5 +1,6 @@
 #kidsCourseDetail {
     --scratchTheme: #FFAB1A;
+    background-color: #FAF9FF;
 
 
     header {
@@ -45,15 +46,20 @@
 
     }
 
-    main.courseDetails {
-        padding: 0 5em;
+    > *:not(header) {
+        margin: 0 5em;
+        margin-bottom: 5em;
+    }
 
+    main.courseDetails {
         @import '../content/source/innerContent';
 
         .video {
-            margin: 6em 0; 
+            margin: 6em 0;
 
-            h3, h2, h4 {
+            h3,
+            h2,
+            h4 {
                 text-align: center;
                 font-size: 1.4rem;
             }
@@ -69,4 +75,24 @@
             }
         }
     }
+
+    section.termCard {
+        background: white;
+        display: flex;
+        border-radius: 1.2em;
+        box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.09);
+        padding: 3em;
+
+        img {
+            --wid: 27em;
+            width: var(--wid);
+            height: var(--wid);
+            object-fit: contain;
+        }
+    }
+}
+
+
+hr {
+    margin-top: 20em;
 }
