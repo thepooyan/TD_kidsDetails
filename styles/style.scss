@@ -10,7 +10,7 @@
         font-weight: bold;
     }
 
-    a.button {
+    a.button, button.default {
         background-color: var(--scratchTheme);
         display: inline-block;
         color: #615031;
@@ -49,6 +49,12 @@
                 bottom: 29%;
             }
 
+        }
+
+        &.alt {
+            color: white;
+            border-radius: 7px;
+            font-weight: bold;
         }
     }
 
@@ -240,6 +246,32 @@
         > main {
             background-color: var(--greyBackground);
             border-radius: var(--borderRadius);
+            padding: 5em;
+
+            form.comment {
+                border: 1px solid #E0E0E0;
+                border-radius: var(--borderRadius);
+                padding: 2em;
+                padding-bottom: 5em;
+
+                p {
+                    font-weight: 600;
+                    font-size: 1.5em;
+                    padding-bottom: 1em;
+                }
+
+                textarea {
+                    border-radius: var(--borderRadius);
+                    width: 100%;
+                    resize: none;
+                    font-family: inherit;
+                    padding: 1em;
+                }
+                button {
+                    font-size: 1.3em;
+                    float: left;
+                }
+            }
         }
     }
 }
