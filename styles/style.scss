@@ -388,7 +388,16 @@
         }
     }
     @include media($tablet) {
-        background-color: yellow;
+        > main, > section {
+            margin-inline: 1rem;
+        }
+        header section img {
+            width: 15em;
+        }
+        section.termCard .left .links a.button {
+            flex-shrink: 0;
+            height: max-content;
+        }
     }
     @include media($mobile) {
         background-color: orange;
