@@ -2,6 +2,7 @@
     --scratchTheme: #FFAB1A;
     --greyText: #939393;
     --greyBackground:#F4F4F4 ;
+    --greyBorder:#E0E0E0;
     --borderRadius: 20px;
     background-color: #FAF9FF;
 
@@ -51,9 +52,10 @@
 
         }
 
-        &.alt {
-            color: white;
+        &.square {
             border-radius: 7px;
+        }
+        &.bold {
             font-weight: bold;
         }
     }
@@ -222,7 +224,7 @@
             }
     }
 
-    section.comments {
+    section#kids_comments {
         h2,h3 {
            text-align: center; 
            font-size: 2em;
@@ -248,11 +250,10 @@
             border-radius: var(--borderRadius);
             padding: 5em;
 
-            form.comment {
-                border: 1px solid #E0E0E0;
+            form {
+                border: 1px solid var(--greyBorder);
                 border-radius: var(--borderRadius);
                 padding: 2em;
-                padding-bottom: 5em;
 
                 p {
                     font-weight: 600;
@@ -267,9 +268,41 @@
                     font-family: inherit;
                     padding: 1em;
                 }
+
                 button {
                     font-size: 1.3em;
-                    float: left;
+                    margin-top: 1em;
+                    margin-right: auto;
+                    display: block;
+                }
+            }
+
+            .comment {
+                margin: 4em 0;
+                .title {
+                    color: var(--greyText);
+                    font-weight: bold;
+                    font-size: 1.4em;
+                }
+                span {
+                    color: var(--greyText);
+                    &::after {
+                        content: '';
+                        border-bottom: 1px solid var(--greyBorder);
+                        display: block;
+                    }
+                }
+                button {
+                    background: none;
+                    color: var(--greyText);
+                    font-size: 1.4em;
+
+                    &::before {
+                        content: '\f3e5';
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 900;
+                        margin-left: .4em;
+                    }
                 }
             }
         }
