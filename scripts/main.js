@@ -6,6 +6,7 @@ if (kidsComment) {
     commentBox.onkeydown = () => {
         commentBox.classList.remove('error');
     }
+
     //submit new comment
     registerForm.onsubmit = e => {
         e.preventDefault();
@@ -27,7 +28,9 @@ if (kidsComment) {
 
     replys.forEach(button => {
         button.onclick = () => {
-            alert('reply')
+            let clone = registerForm.cloneNode(true);
+            clone.classList.add("kids_comments_form");
+            callModal(clone);
         }
     });
 }

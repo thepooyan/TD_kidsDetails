@@ -1,8 +1,8 @@
 #kidsCourseDetail {
     --scratchTheme: #FFAB1A;
     --greyText: #939393;
-    --greyBackground:#F4F4F4 ;
-    --greyBorder:#E0E0E0;
+    --greyBackground: #F4F4F4;
+    --greyBorder: #E0E0E0;
     --borderRadius: 20px;
     background-color: #FAF9FF;
 
@@ -11,7 +11,8 @@
         font-weight: bold;
     }
 
-    a.button, button.default {
+    a.button,
+    button.default {
         background-color: var(--scratchTheme);
         display: inline-block;
         color: #615031;
@@ -55,6 +56,7 @@
         &.square {
             border-radius: 7px;
         }
+
         &.bold {
             font-weight: bold;
         }
@@ -104,11 +106,6 @@
 
     }
 
-    >*:not(header) {
-        margin: 0 5em;
-        margin-bottom: 5em;
-    }
-
     main.courseDetails {
         @import '../content/source/innerContent';
 
@@ -134,7 +131,10 @@
         }
     }
 
-    > section {
+    >section,>main {
+        margin: 0 5em;
+        margin-bottom: 5em;
+
         >h2,
         >h3 {
             border-bottom: 2px solid transparent;
@@ -178,82 +178,88 @@
     }
 
     section.smapleProject .content {
-            display: flex;
-            flex-wrap: wrap;
+        display: flex;
+        flex-wrap: wrap;
 
-            >div {
-                flex: 0 0 25%;
-                padding: 0 1em;
-                margin-bottom: 3em;
+        >div {
+            flex: 0 0 25%;
+            padding: 0 1em;
+            margin-bottom: 3em;
+
+            img {
+                width: 100%;
+                border-radius: var(--borderRadius);
+            }
+
+            .title {
+                color: var(--scratchTheme);
+                font-weight: bold;
+                font-size: 1.5em;
+                margin: 0.5em 0;
+            }
+
+            p {
+                color: var(--greyText);
+                font-size: 1.1em;
+                line-height: 2em;
+                max-height: 4em;
+                overflow: hidden;
+            }
+
+            .user {
+                margin-top: 1em;
 
                 img {
-                    width: 100%;
-                    border-radius: var(--borderRadius);
+                    width: 4em;
+                    border-radius: 50%;
+                    float: right;
+                    margin-left: 1em;
                 }
 
-                .title {
-                    color: var(--scratchTheme);
-                    font-weight: bold;
-                    font-size: 1.5em;
-                    margin: 0.5em 0;
-                }
-
-                p {
-                    color: var(--greyText);
-                    font-size: 1.1em;
-                    line-height: 2em;
-                    max-height: 4em;
-                    overflow: hidden;
-                }
-
-                .user {
-                    margin-top: 1em;
-                    img {
-                        width: 4em;
-                        border-radius: 50%;
-                        float: right;
-                        margin-left: 1em;
-                    }
-
-                    span {
-                        display: block;
-                        line-height: 0.7em;
-                        color: var(--grey);
-                    }
+                span {
+                    display: block;
+                    line-height: 0.7em;
+                    color: var(--grey);
                 }
             }
+        }
     }
 
     section#kids_comments {
-        h2,h3 {
-           text-align: center; 
-           font-size: 2em;
-           font-weight: 800;
-           border: none;
-           position: relative;
 
-           &::before {
-            content: "";
-            width: 3px;
-            height: 1em;
-            display: block;
-            background: var(--scratchTheme);
-            position: absolute;
-            left: 0;
-            right: 0;
-            margin: auto;
-            top: calc(100% + 0.5em);
-           }
+        h2,
+        h3 {
+            text-align: center;
+            font-size: 2em;
+            font-weight: 800;
+            border: none;
+            position: relative;
+
+            &::before {
+                content: "";
+                width: 3px;
+                height: 1em;
+                display: block;
+                background: var(--scratchTheme);
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+                top: calc(100% + 0.5em);
+            }
         }
-        > main {
+
+        >main {
             background-color: var(--greyBackground);
             border-radius: var(--borderRadius);
             padding: 5em;
 
+            @at-root .kids_comments_form,
             form {
                 border: 1px solid var(--greyBorder);
                 border-radius: var(--borderRadius);
                 padding: 2em;
+                background-color: var(--greyBackground);
 
                 p {
                     font-weight: 600;
@@ -279,23 +285,30 @@
                     margin-right: auto;
                     display: block;
                 }
+                &.kids_comments_form {
+                    font-size: .7em;
+                }
             }
 
             .comment {
                 margin: 4em 0;
+
                 .title {
                     color: var(--greyText);
                     font-weight: bold;
                     font-size: 1.4em;
                 }
+
                 span {
                     color: var(--greyText);
+
                     &::after {
                         content: '';
                         border-bottom: 1px solid var(--greyBorder);
                         display: block;
                     }
                 }
+
                 button {
                     background: none;
                     color: var(--greyText);
