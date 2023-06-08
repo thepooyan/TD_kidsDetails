@@ -267,6 +267,10 @@
                     resize: none;
                     font-family: inherit;
                     padding: 1em;
+
+                    &.error {
+                        border: 1px solid red;
+                    }
                 }
 
                 button {
