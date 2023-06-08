@@ -383,8 +383,8 @@
                 margin-top: 2em;
             }
         }
-        section.smapleProject {
-            display: none;
+        section.smapleProject .content div {
+           flex: 0 0 50%; 
         }
     }
     @include media($tablet) {
