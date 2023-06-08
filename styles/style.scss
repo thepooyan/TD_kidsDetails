@@ -1,3 +1,4 @@
+@import '../content/source/Variables';
 #kidsCourseDetail {
     --scratchTheme: #FFAB1A;
     --greyText: #939393;
@@ -371,9 +372,25 @@
             }
         }
     }
-}
 
+    @include media($laptop) {
+        section.termCard {
+            flex-direction: column;
+            align-items: center;
 
-hr {
-    margin-top: 20em;
+            .left .links {
+                position: static;
+                margin-top: 2em;
+            }
+        }
+        section.smapleProject {
+            display: none;
+        }
+    }
+    @include media($tablet) {
+        background-color: yellow;
+    }
+    @include media($mobile) {
+        background-color: orange;
+    }
 }
