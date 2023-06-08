@@ -1,9 +1,13 @@
 const kidsComment = dc.id("kids_comments");
 if (kidsComment) {
     let registerForm = kidsComment.query('form');
+    let commentBox = registerForm.query('textarea');
+
     registerForm.onsubmit = e => {
         e.preventDefault();
-        alert('register')
+
+        console.log("comment to be saved: ", commentBox.value)
+        commentBox.value = '';
     }
 
     //reply button event
