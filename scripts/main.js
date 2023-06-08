@@ -8,7 +8,7 @@ if (kidsComment) {
     }
 
     //submit new comment
-    registerForm.onsubmit = e => {
+    function submitComment(commentBox, e) {
         e.preventDefault();
 
         if (!commentBox.value) {
@@ -21,6 +21,10 @@ if (kidsComment) {
         callModal.success('نظر شما با موفقیت ثبت شد و پس از بازرسی ادمین نمایش داده میشود').then(()=>{
             commentBox.value = '';
         })
+
+    }
+    registerForm.onsubmit = e => {
+        submitComment(commentBox, e);
     }
 
     //reply button event
@@ -30,6 +34,16 @@ if (kidsComment) {
         button.onclick = () => {
             let clone = registerForm.cloneNode(true);
             clone.classList.add("kids_comments_form");
+            let _textarea = clone.querySelector('textarea');
+            _textarea.classList.remove('error');
+            _textarea.placeholder = 'ثبت پاسخ...';
+            clone.querySelector('p').innerText = 'پاسخ خود را ثبت کنید';
+            clone.querySelector('button').innerText = 'ثبت پاسخ';
+
+            clone.onsubmit = e => {
+                submitComment(_textarea, e);
+            }
+
             callModal(clone);
         }
     });

@@ -131,7 +131,8 @@
         }
     }
 
-    >section,>main {
+    >section,
+    >main {
         margin: 0 5em;
         margin-bottom: 5em;
 
@@ -285,18 +286,23 @@
                     margin-right: auto;
                     display: block;
                 }
+
                 &.kids_comments_form {
                     font-size: .7em;
                 }
             }
 
             .comment {
-                margin: 4em 0;
+                margin: 5em 0;
 
                 .title {
                     color: var(--greyText);
                     font-weight: bold;
                     font-size: 1.4em;
+                }
+
+                p {
+                    font-size: 1.3em;
                 }
 
                 span {
@@ -306,6 +312,7 @@
                         content: '';
                         border-bottom: 1px solid var(--greyBorder);
                         display: block;
+                        margin-bottom: 1em;
                     }
                 }
 
@@ -313,6 +320,7 @@
                     background: none;
                     color: var(--greyText);
                     font-size: 1.4em;
+                    margin-top: 1em;
 
                     &::before {
                         content: '\f3e5';
