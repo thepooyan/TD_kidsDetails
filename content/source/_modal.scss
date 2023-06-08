@@ -1,7 +1,8 @@
 ﻿@import '../source/Variables';
 
 #modal {
-    --scale: 1;
+    --scale: 1.5;
+    font-size: 1.6em !important;
     opacity: 0;
     visibility: hidden;
     width: 100vw;
