@@ -4,6 +4,7 @@
     --greyBackground: #F4F4F4;
     --greyBorder: #E0E0E0;
     --borderRadius: 20px;
+    --borderRadiusSquare: 7px;
     background-color: #FAF9FF;
 
     a {
@@ -16,8 +17,9 @@
         background-color: var(--scratchTheme);
         display: inline-block;
         color: #615031;
-        border-radius: var(--borderRadius);
-        padding: 0.5em 1.6em;
+        border-radius: var(--borderRadiusSquare);
+        padding: 0.4em 1.6em;
+        transition: .1s;
 
         &.scratched {
 
@@ -48,17 +50,17 @@
             &_3::before {
                 background-image: url("/Content/images/img/scratch items/scratch_happy.png");
                 left: 59%;
-                bottom: 29%;
+                bottom: 24%;
             }
 
         }
 
-        &.square {
-            border-radius: 7px;
-        }
-
         &.bold {
             font-weight: bold;
+        }
+
+        &:hover {
+            box-shadow: 1px 1px 3px #0000007a;
         }
     }
 
@@ -158,6 +160,7 @@
         border-radius: var(--borderRadius);
         box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.09);
         padding: 2.3em;
+        margin-bottom: 2em;
 
         img {
             --wid: 20.9em;
