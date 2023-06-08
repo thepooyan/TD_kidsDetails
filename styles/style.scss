@@ -171,12 +171,19 @@
         }
 
         .left {
+            position: relative;
             p {
                 color: var(--greyText);
             }
-
             .info div span {
                 color: var(--greyText);
+            }
+            .links {
+                display: flex;
+                justify-content: space-between;
+                position: absolute;
+                width: 100%;
+                bottom: 0;
             }
         }
     }
