@@ -1,4 +1,5 @@
 @import '../content/source/Variables';
+
 #kidsCourseDetail {
     --scratchTheme: #FFAB1A;
     --greyText: #939393;
@@ -85,6 +86,11 @@
             left: 0;
             right: 0;
 
+            h2 {
+                text-align: center;
+                line-height: 3.6rem;
+            }
+
             span {
                 color: #ffffffa1;
             }
@@ -102,7 +108,7 @@
             background-color: #FFAB1A;
             height: 7.3em;
             position: absolute;
-            top: 100%;
+            top: 99%;
             clip-path: ellipse(60% 100% at 50% -40%);
             right: 0;
         }
@@ -177,12 +183,15 @@
 
         .left {
             position: relative;
+
             p {
                 color: var(--greyText);
             }
+
             .info div span {
                 color: var(--greyText);
             }
+
             .links {
                 display: flex;
                 justify-content: space-between;
@@ -204,13 +213,16 @@
             font-weight: bold;
             font-size: 1.5em;
         }
+
         h4 {
             font-size: 1.4em;
         }
+
         ul {
             font-size: 0.9rem;
             line-height: 1.4rem;
             margin-block: 0.6em 2em;
+
             li {
                 list-style-type: disc;
                 list-style: inside;
@@ -383,23 +395,46 @@
                 margin-top: 2em;
             }
         }
+
         section.smapleProject .content div {
-           flex: 0 0 50%; 
+            flex: 0 0 50%;
         }
     }
+
     @include media($tablet) {
-        > main, > section {
+
+        >main,
+        >section {
             margin-inline: 1rem;
         }
+
         header section img {
-            width: 15em;
+            width: 100%;
+            max-width: 15em;
         }
+
         section.termCard .left .links a.button {
             flex-shrink: 0;
             height: max-content;
         }
     }
+
     @include media($mobile) {
-        background-color: orange;
+        header {
+            padding: 5.3em 0;
+            padding-top: 1.4em;
+        }
+
+        section.termCard {
+            display: none;
+        }
+
+        section.smapleProject {
+            display: none;
+        }
+
+        section#kids_comments {
+            display: none;
+        }
     }
 }
