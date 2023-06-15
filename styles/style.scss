@@ -5,7 +5,6 @@ html {
 }
 
 #kidsCourseDetail {
-    --scratchTheme: #FFAB1A;
     --greyText: #939393;
     --greyBackground: #F4F4F4;
     --greyBorder: #E0E0E0;
@@ -13,16 +12,28 @@ html {
     --borderRadiusSquare: 7px;
     background-color: #FAF9FF;
 
+    &[data-theme='scratch'] {
+        --mainTheme: #FFAB1A;
+        --themeCompliment: #615031;
+    }
+    &[data-theme='python'] {
+        --mainTheme: #C39C1A;
+        --themeCompliment: #615031;
+    }
+    &[data-theme='robotic'] {
+        --mainTheme: #294F81;
+        --themeCompliment: white;
+    }
     a {
-        color: var(--scratchTheme);
+        color: var(--mainTheme);
         font-weight: bold;
     }
 
     a.button,
     button.default {
-        background-color: var(--scratchTheme);
+        background-color: var(--mainTheme);
         display: inline-block;
-        color: #615031;
+        color: var(--themeCompliment);
         border-radius: var(--borderRadiusSquare);
         padding: 0.4em 1.6em;
         transition: .1s;
@@ -73,7 +84,7 @@ html {
 
 
     header {
-        background-color: var(--scratchTheme);
+        background-color: var(--mainTheme);
         color: white;
         font-size: 2.6em;
         padding: 5.5em;
@@ -110,7 +121,7 @@ html {
         &::before {
             content: "";
             width: 100%;
-            background-color: #FFAB1A;
+            background-color: var(--mainTheme);
             height: 7.3em;
             position: absolute;
             top: 99%;
@@ -153,13 +164,13 @@ html {
         >h2,
         >h3 {
             border-bottom: 2px solid transparent;
-            border-image: linear-gradient(to left, var(--scratchTheme) 0% var(--border-size), transparent var(--border-size) 100%);
+            border-image: linear-gradient(to left, var(--mainTheme) 0% var(--border-size), transparent var(--border-size) 100%);
             border-image-slice: 1;
             --border-size: 38px;
             margin-bottom: 2em;
 
             span {
-                color: var(--scratchTheme);
+                color: var(--mainTheme);
             }
         }
     }
@@ -214,7 +225,7 @@ html {
 
         h3 {
             border: none;
-            color: var(--scratchTheme);
+            color: var(--mainTheme);
             font-weight: bold;
             font-size: 1.5em;
         }
@@ -250,7 +261,7 @@ html {
             }
 
             .title {
-                color: var(--scratchTheme);
+                color: var(--mainTheme);
                 font-weight: bold;
                 font-size: 1.5em;
                 margin: 0.5em 0;
@@ -307,7 +318,7 @@ html {
                 width: 3px;
                 height: 1em;
                 display: block;
-                background: var(--scratchTheme);
+                background: var(--mainTheme);
                 position: absolute;
                 left: 0;
                 right: 0;
@@ -321,8 +332,8 @@ html {
             border-radius: var(--borderRadius);
             padding: 5em;
 
-            @at-root .kids_comments_form,
-            form {
+            @at-root .kids_comments_form, 
+            #kidsCourseDetail section#kids_comments > main form {
                 border: 1px solid var(--greyBorder);
                 border-radius: var(--borderRadius);
                 padding: 2em;
