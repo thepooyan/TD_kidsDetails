@@ -1,5 +1,9 @@
 @import '../content/source/Variables';
 
+html {
+    overflow: hidden;
+}
+
 #kidsCourseDetail {
     --scratchTheme: #FFAB1A;
     --greyText: #939393;
@@ -296,6 +300,7 @@
             font-weight: 800;
             border: none;
             position: relative;
+            margin-bottom: 1em;
 
             &::before {
                 content: "";
@@ -464,10 +469,12 @@
             }
         }
 
-        section.smapleProject {}
-
         section#kids_comments {
-            display: none;
+            margin-inline: 0.1em;
+            > main {
+                padding: 1em;
+                padding-top: 3em;
+            }
         }
     }
 }
