@@ -18,7 +18,7 @@ if (kidsComment) {
         }
 
         console.log("comment to be saved: ", commentBox.value);
-        callModal.success('نظر شما با موفقیت ثبت شد و پس از بازرسی ادمین نمایش داده میشود').then(()=>{
+        callModal.success('نظر شما با موفقیت ثبت شد و پس از بازرسی ادمین نمایش داده میشود').then(() => {
             commentBox.value = '';
         })
 
@@ -47,4 +47,20 @@ if (kidsComment) {
             callModal(clone);
         }
     });
+}
+
+const sampleProject = dc.query('#kidsCourseDetail .smapleProject');
+if (sampleProject) {
+    const projectItems = sampleProject.query('.smapleProject > .content')
+    //turn sample project into carousel if smaller than 480
+    if (window.innerWidth < 480) {
+        projectItems.classList.add('owl-carousel');
+        $(projectItems).owlCarousel({
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            rtl: true,
+            items: 1.5,
+        });
+    }
 }

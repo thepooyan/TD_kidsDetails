@@ -235,7 +235,7 @@
         display: flex;
         flex-wrap: wrap;
 
-        >div {
+        .projectItem {
             flex: 0 0 25%;
             padding: 0 1em;
             margin-bottom: 3em;
@@ -275,6 +275,14 @@
                     line-height: 0.7em;
                     color: var(--grey);
                 }
+            }
+        }
+
+        &.owl-carousel {
+            display: block;
+
+            .projectItem {
+                padding-right: 0;
             }
         }
     }
@@ -444,9 +452,11 @@
                 gap: .5em;
             }
 
-            a.button, button.default {
+            a.button,
+            button.default {
 
-                &.scratched_1, &.scratched_3 {
+                &.scratched_1,
+                &.scratched_3 {
                     &::before {
                         display: none;
                     }
@@ -454,9 +464,7 @@
             }
         }
 
-        section.smapleProject {
-            display: none;
-        }
+        section.smapleProject {}
 
         section#kids_comments {
             display: none;
