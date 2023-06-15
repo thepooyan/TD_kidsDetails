@@ -15,15 +15,48 @@ html {
     &[data-theme='scratch'] {
         --mainTheme: #FFAB1A;
         --themeCompliment: #615031;
+
+        .withImg {
+            &_1::before {
+                background-image: url("/Content/images/img/scratch items/scratch_selfie.png");
+            }
+
+            &_3::before {
+                background-image: url("/Content/images/img/scratch items/scratch_happy.png");
+            }
+        }
     }
+
     &[data-theme='python'] {
         --mainTheme: #C39C1A;
         --themeCompliment: white;
+
+        .withImg {
+            &_1::before {
+                background-image: url("/Content/images/img/scratch items/scratch_selfie.png");
+            }
+
+            &_3::before {
+                background-image: url("/Content/images/img/scratch items/scratch_happy.png");
+            }
+        }
     }
+
     &[data-theme='robotic'] {
         --mainTheme: #294F81;
         --themeCompliment: white;
+
+        .withImg {
+            &_1::before {
+                background-image: url("/Content/images/img/scratch items/scratch_selfie.png");
+            }
+
+            &_3::before {
+                background-image: url("/Content/images/img/scratch items/scratch_happy.png");
+            }
+        }
     }
+
     a {
         color: var(--mainTheme);
         font-weight: bold;
@@ -53,7 +86,6 @@ html {
                     display: block;
                     position: absolute;
                     bottom: 100%;
-                    background: url("/Content/images/img/scratch items/scratch_selfie.png");
                     --wid: 8em;
                     bottom: calc(100% - 1.2em);
                     left: calc(100% - 3.9em);
@@ -66,7 +98,6 @@ html {
             }
 
             &_3::before {
-                background-image: url("/Content/images/img/scratch items/scratch_happy.png");
                 left: 59%;
                 bottom: 24%;
             }
@@ -332,8 +363,8 @@ html {
             border-radius: var(--borderRadius);
             padding: 5em;
 
-            @at-root .kids_comments_form, 
-            #kidsCourseDetail section#kids_comments > main form {
+            @at-root .kids_comments_form,
+            #kidsCourseDetail section#kids_comments>main form {
                 border: 1px solid var(--greyBorder);
                 border-radius: var(--borderRadius);
                 padding: 2em;
@@ -482,7 +513,8 @@ html {
 
         section#kids_comments {
             margin-inline: 0.1em;
-            > main {
+
+            >main {
                 padding: 1em;
                 padding-top: 3em;
             }
