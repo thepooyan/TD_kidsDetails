@@ -12,50 +12,9 @@ html {
     --borderRadiusSquare: 7px;
     background-color: #FAF9FF;
 
-    &[data-theme='scratch'] {
-        --mainTheme: #FFAB1A;
-        --themeCompliment: #615031;
-
-        .withImg {
-            &_1::before {
-                background-image: url("/Content/images/img/scratch items/scratch_selfie.png");
-            }
-
-            &_3::before {
-                background-image: url("/Content/images/img/scratch items/scratch_happy.png");
-            }
-        }
-    }
-
-    &[data-theme='python'] {
-        --mainTheme: #C39C1A;
-        --themeCompliment: white;
-
-        .withImg {
-            &_1::before {
-                background-image: url("/Content/images/img/python items/python_crawling.png");
-            }
-
-            &_3::before {
-                background-image: url("/Content/images/img/python items/python_on_tree.png");
-            }
-        }
-    }
-
-    &[data-theme='robotic'] {
-        --mainTheme: #294F81;
-        --themeCompliment: white;
-
-        .withImg {
-            &_1::before {
-                background-image: url("../public/Content/images/img/robotics items/robotic_chat.png");
-            }
-
-            &_3::before {
-                background-image: url("../public/Content/images/img/robotics items/robotic_idea.png");
-            }
-        }
-    }
+    @import 'theme_scratch';
+    @import 'theme_robotic';
+    @import 'theme_python';
 
     a {
         color: var(--mainTheme);

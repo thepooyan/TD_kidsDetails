@@ -1,0 +1,15 @@
+&[data-theme='python'] {
+
+    --mainTheme: #C39C1A;
+    --themeCompliment: white;
+
+    .withImg {
+        &_1::before {
+            background-image: url("/Content/images/img/python items/python_crawling.png");
+        }
+
+        &_3::before {
+            background-image: url("/Content/images/img/python items/python_on_tree.png");
+        }
+    }
+}

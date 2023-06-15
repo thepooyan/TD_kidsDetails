@@ -1,0 +1,14 @@
+&[data-theme='scratch'] {
+    --mainTheme: #FFAB1A;
+    --themeCompliment: #615031;
+
+    .withImg {
+        &_1::before {
+            background-image: url("/Content/images/img/scratch items/scratch_selfie.png");
+        }
+
+        &_3::before {
+            background-image: url("/Content/images/img/scratch items/scratch_happy.png");
+        }
+    }
+}

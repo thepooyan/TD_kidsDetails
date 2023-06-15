@@ -1,0 +1,14 @@
+&[data-theme='robotic'] {
+    --mainTheme: #294F81;
+    --themeCompliment: white;
+
+    .withImg {
+        &_1::before {
+            background-image: url("../public/Content/images/img/robotics items/robotic_chat.png");
+        }
+
+        &_3::before {
+            background-image: url("../public/Content/images/img/robotics items/robotic_idea.png");
+        }
+    }
+}
