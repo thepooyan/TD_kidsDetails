@@ -33,14 +33,6 @@ html {
 
         &.withImg {
 
-    .withImg {
-        &_1::before {
-        }
-
-        &_3::before {
-            background-image: url("/Content/images/img/python items/python_on_tree.png");
-        }
-    }
             &_1,
             &_2,
             &_3 {
@@ -48,17 +40,14 @@ html {
 
                 &::before {
                     content: "";
-                    width: var(--wid);
-                    height: var(--wid);
+                    width: 16.3em;
+                    height: 11em;
                     display: block;
                     position: absolute;
                     background-image: var(--button_image_1);
                     background-repeat: no-repeat;
-                    bottom: 100%;
-                    --wid: 8em;
-                    bottom: calc(100% - 1.2em);
-                    left: calc(100% - 3.9em);
-                    background-size: contain;
+                    left: -2.5em;
+                    bottom: 0.3em; 
                 }
             }
 
@@ -67,8 +56,6 @@ html {
             }
 
             &_3::before {
-                left: 59%;
-                bottom: 24%;
                 background-image: var(--button_image_2);
             }
 
@@ -472,8 +459,8 @@ html {
             a.button,
             button.default {
 
-                &.scratched_1,
-                &.scratched_3 {
+                &.withImg_1,
+                &.withImg_3 {
                     &::before {
                         display: none;
                     }
