@@ -33,11 +33,11 @@ html {
 
         .withImg {
             &_1::before {
-                background-image: url("/Content/images/img/scratch items/scratch_selfie.png");
+                background-image: url("/Content/images/img/python items/python_crawling.png");
             }
 
             &_3::before {
-                background-image: url("/Content/images/img/scratch items/scratch_happy.png");
+                background-image: url("/Content/images/img/python items/python_on_tree.png");
             }
         }
     }
@@ -48,11 +48,11 @@ html {
 
         .withImg {
             &_1::before {
-                background-image: url("/Content/images/img/scratch items/scratch_selfie.png");
+                background-image: url("../public/Content/images/img/robotics items/robotic_chat.png");
             }
 
             &_3::before {
-                background-image: url("/Content/images/img/scratch items/scratch_happy.png");
+                background-image: url("../public/Content/images/img/robotics items/robotic_idea.png");
             }
         }
     }
@@ -85,6 +85,7 @@ html {
                     height: var(--wid);
                     display: block;
                     position: absolute;
+                    background-repeat: no-repeat;
                     bottom: 100%;
                     --wid: 8em;
                     bottom: calc(100% - 1.2em);
