@@ -448,6 +448,10 @@ html {
         header {
             padding: 5.3em 0;
             padding-top: 1.4em;
+
+            &::after {
+                top: 5em;
+            }
         }
 
         section.termCard {
