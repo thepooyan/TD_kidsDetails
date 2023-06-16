@@ -64,3 +64,8 @@ if (sampleProject) {
         });
     }
 }
+
+const interview = dc.query('#kidsCourseDetail .interview');
+if (interview) {
+    alert('sdf')
+}
