@@ -75,6 +75,7 @@ html {
             display: block;
             text-align: center;
             font-weight: 800;
+            font-size: 2em;
             position: relative;
             margin-bottom: .7em;
 
@@ -100,9 +101,10 @@ html {
         &:not(.except) {
             --size: 4%;
             border-bottom: .2em solid transparent;
-            border-image: linear-gradient(to left, var(--blueMain) 0 var(--size), transparent var(--size) 100%);
+            border-image: linear-gradient(to left, var(--mainTheme) 0 var(--size), transparent var(--size) 100%);
             border-image-slice: 1;
             margin-bottom: 1rem;
+            font-size: 1.6em;
 
             span {
                 color: var(--mainTheme);
@@ -251,7 +253,6 @@ html {
 
     section[id^="headline"] {
         @extend %whiteCard;
-        margin-bottom: 2em;
         color: var(--greyText);
 
         h3 {
@@ -334,29 +335,6 @@ html {
     }
 
     section#kids_comments {
-
-        h2,
-        h3 {
-            text-align: center;
-            font-size: 2em;
-            font-weight: 800;
-            border: none;
-            position: relative;
-            margin-bottom: 1em;
-
-            &::before {
-                content: "";
-                width: 3px;
-                height: 1em;
-                display: block;
-                background: var(--mainTheme);
-                position: absolute;
-                left: 0;
-                right: 0;
-                margin: auto;
-                top: calc(100% + 0.5em);
-            }
-        }
 
         >main {
             background-color: var(--greyBackground);
