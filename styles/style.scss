@@ -70,6 +70,45 @@ html {
         }
     }
 
+    .title {
+        &:not(.except) {
+            display: block;
+            text-align: center;
+            font-weight: 800;
+            position: relative;
+            margin-bottom: .7em;
+
+            &::after {
+                content: "";
+                height: 1em;
+                width: 3px;
+                background-color: var(--mainTheme);
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+                top: calc(100% + 0.2em);
+            }
+
+            span {
+                color: var(--mainTheme);
+            }
+        }
+    }
+
+    .subtitle {
+        &:not(.except) {
+            --size: 4%;
+            border-bottom: .2em solid transparent;
+            border-image: linear-gradient(to left, var(--blueMain) 0 var(--size), transparent var(--size) 100%);
+            border-image-slice: 1;
+            margin-bottom: 1rem;
+
+            span {
+                color: var(--mainTheme);
+            }
+        }
+    }
 
     header {
         background-color: var(--mainTheme);
@@ -165,19 +204,6 @@ html {
     >main {
         margin: 0 5rem;
         margin-bottom: 5rem;
-
-        >h2,
-        >h3 {
-            border-bottom: 2px solid transparent;
-            border-image: linear-gradient(to left, var(--mainTheme) 0% var(--border-size), transparent var(--border-size) 100%);
-            border-image-slice: 1;
-            --border-size: 38px;
-            margin-bottom: 2em;
-
-            span {
-                color: var(--mainTheme);
-            }
-        }
     }
 
     %whiteCard {
@@ -265,7 +291,7 @@ html {
                 border-radius: var(--borderRadius);
             }
 
-            .title {
+            .title_ {
                 color: var(--mainTheme);
                 font-weight: bold;
                 font-size: 1.5em;
@@ -377,7 +403,7 @@ html {
             .comment {
                 margin: 5em 0;
 
-                .title {
+                .title_ {
                     color: var(--greyText);
                     font-weight: bold;
                     font-size: 1.4em;
