@@ -34,8 +34,7 @@ html {
         &.withImg {
 
             &_1,
-            &_2,
-            &_3 {
+            &_2 {
                 position: relative;
 
                 &::before {
@@ -52,10 +51,6 @@ html {
             }
 
             &_2::before {
-                background: none
-            }
-
-            &_3::before {
                 background-image: var(--button_image_2);
             }
 
@@ -77,6 +72,8 @@ html {
             font-weight: 800;
             font-size: 2em;
             position: relative;
+            width: max-content;
+            margin: auto;
             margin-bottom: .7em;
 
             &::after {
@@ -93,6 +90,20 @@ html {
 
             span {
                 color: var(--mainTheme);
+            }
+
+            &.hasIcon::before {
+                content: "";
+                background: var(--button_image_3);
+                width: 7em;
+                height: 7em;
+                display: block;
+                background-size: cover;
+                position: absolute;
+                left: -6.7em;
+                top: 0;
+                bottom: 0;
+                margin: auto;
             }
         }
     }
@@ -480,7 +491,7 @@ html {
             button.default {
 
                 &.withImg_1,
-                &.withImg_3 {
+                &.withImg_2 {
                     &::before {
                         display: none;
                     }
