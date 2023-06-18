@@ -67,7 +67,7 @@ if (sampleProject) {
 
 const interview = dc.query('#kidsCourseDetail .interview');
 if (interview) {
-    let player = interview.query('.interview > div');
+    let player = interview.query('.interview > div > .video');
     player.src = player.query('source');
     player.poster = player.query('video');
     player.description = player.query('section');
@@ -83,6 +83,15 @@ if (interview) {
             player.poster.setAttribute('poster', posterSrc);
             player.src.setAttribute('src', videoSrc);
             player.description.replaceChildren(...descriptions);
+            player.classList.remove('playing');
+            player.poster.removeAttribute('controls');
+            player.poster.load();
         }
-    })
+    });
+
+    player.onclick = () => {
+        player.classList.add('playing');
+        player.poster.setAttribute('controls', true);
+        player.poster.play();
+    }
 }
