@@ -67,5 +67,22 @@ if (sampleProject) {
 
 const interview = dc.query('#kidsCourseDetail .interview');
 if (interview) {
-    alert('sdf')
+    let player = interview.query('.interview > div');
+    player.src = player.query('source');
+    player.poster = player.query('video');
+    player.description = player.query('section');
+    let videos = interview.queries('.interview > div > .item');
+
+    videos.forEach(video => {
+        let videoSrc = video.dataset.video;
+        let posterSrc = video.querySelector('img').getAttribute('src');
+        let descriptions = video.querySelectorAll('section > *');
+        descriptions = Object.values(descriptions).map(i=>i.cloneNode(true));
+
+        video.onclick = () => {
+            player.poster.setAttribute('poster', posterSrc);
+            player.src.setAttribute('src', videoSrc);
+            player.description.replaceChildren(...descriptions);
+        }
+    })
 }
