@@ -73,6 +73,16 @@ if (interview) {
     player.description = player.query('section');
     let videos = interview.queries('.interview > div > .item');
 
+    const playVideo = () => {
+        player.classList.add('playing');
+        player.poster.setAttribute('controls', true);
+        player.poster.play();
+    }
+    const pauseVideo = () => {
+        player.classList.remove('playing');
+        player.poster.removeAttribute('controls');
+    }
+
     videos.forEach(video => {
         let videoSrc = video.dataset.video;
         let posterSrc = video.querySelector('img').getAttribute('src');
@@ -83,15 +93,11 @@ if (interview) {
             player.poster.setAttribute('poster', posterSrc);
             player.src.setAttribute('src', videoSrc);
             player.description.replaceChildren(...descriptions);
-            player.classList.remove('playing');
-            player.poster.removeAttribute('controls');
             player.poster.load();
+            pauseVideo();
         }
     });
 
-    player.onclick = () => {
-        player.classList.add('playing');
-        player.poster.setAttribute('controls', true);
-        player.poster.play();
-    }
+    player.onclick = playVideo;
+    player.poster.onended = pauseVideo;
 }
