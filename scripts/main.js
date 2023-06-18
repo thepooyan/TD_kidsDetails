@@ -71,7 +71,7 @@ if (interview) {
     player.src = player.query('source');
     player.poster = player.query('video');
     player.description = player.query('section');
-    let videos = interview.queries('.interview > div > .item');
+    let videos = interview.queries('.interview > div > .potentiallySlider > .item');
 
     const playVideo = () => {
         player.classList.add('playing');

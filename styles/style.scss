@@ -348,9 +348,8 @@ html {
     section.interview {
         >div {
             display: grid;
-            grid-template-columns: repeat(4, 1fr) 2fr;
+            grid-template-columns: 4fr 2fr;
             column-gap: 2em;
-            row-gap: 1em;
             margin-top: 10em;
 
             .videoOverlay {
@@ -403,9 +402,37 @@ html {
                 }
             }
 
+            .potentiallySlider {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                column-gap: 2em;
+                row-gap: 1em;
+
+                .item {
+                    .videoOverlay {
+                        img {
+                            height: 15em;
+                            object-fit: cover;
+                        }
+
+                        margin-bottom: 1em;
+                    }
+
+                    p {
+                        line-height: 1em;
+                        font-size: 1.4em;
+                        font-weight: 500;
+                    }
+
+                    span {
+                        font-size: 1.2em;
+                        color: var(--greyText);
+                        line-height: 1em;
+                    }
+                }
+            }
+
             .video {
-                grid-column: 5/6;
-                grid-row: 1/3;
                 height: 36em;
 
                 video {
@@ -448,29 +475,6 @@ html {
 
                 &:not(.playing):hover section {
                     bottom: 0;
-                }
-            }
-
-            .item {
-                .videoOverlay {
-                    img {
-                        height: 15em;
-                        object-fit: cover;
-                    }
-
-                    margin-bottom: 1em;
-                }
-
-                p {
-                    line-height: 1em;
-                    font-size: 1.4em;
-                    font-weight: 500;
-                }
-
-                span {
-                    font-size: 1.2em;
-                    color: var(--greyText);
-                    line-height: 1em;
                 }
             }
         }
