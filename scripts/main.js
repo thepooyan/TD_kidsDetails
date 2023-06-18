@@ -1,3 +1,16 @@
+function initMobileOwl(query) {
+    //turn sample project into carousel if smaller than 480
+    if (window.innerWidth <= 480) {
+        query.classList.add('owl-carousel');
+        $(query).owlCarousel({
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            rtl: true,
+            items: 1.5,
+        });
+    }
+}
 const kidsComment = dc.id("kids_comments");
 if (kidsComment) {
     let registerForm = kidsComment.query('form');
@@ -52,17 +65,7 @@ if (kidsComment) {
 const sampleProject = dc.query('#kidsCourseDetail .smapleProject');
 if (sampleProject) {
     const projectItems = sampleProject.query('.smapleProject > .content')
-    //turn sample project into carousel if smaller than 480
-    if (window.innerWidth < 480) {
-        projectItems.classList.add('owl-carousel');
-        $(projectItems).owlCarousel({
-            loop: true,
-            autoplay: true,
-            autoplayTimeout: 2000,
-            rtl: true,
-            items: 1.5,
-        });
-    }
+    initMobileOwl(projectItems);
 }
 
 const interview = dc.query('#kidsCourseDetail .interview');
@@ -87,7 +90,7 @@ if (interview) {
         let videoSrc = video.dataset.video;
         let posterSrc = video.querySelector('img').getAttribute('src');
         let descriptions = video.querySelectorAll('section > *');
-        descriptions = Object.values(descriptions).map(i=>i.cloneNode(true));
+        descriptions = Object.values(descriptions).map(i => i.cloneNode(true));
 
         video.onclick = () => {
             player.poster.setAttribute('poster', posterSrc);
@@ -100,4 +103,7 @@ if (interview) {
 
     player.onclick = playVideo;
     player.poster.onended = pauseVideo;
+
+    let slider = interview.query('.potentiallySlider');
+    initMobileOwl(slider);
 }
